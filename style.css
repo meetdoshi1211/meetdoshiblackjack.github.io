@@ -1,0 +1,196 @@
+:root {
+    --felt-green: #2c5d41;
+    --felt-border: #2d503f;
+    --wood-border: #a0522d;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --card-border-radius: 8px;
+    --button-hover-bg: #218838;
+    --button-active-bg: #1e7e34;
+    --table-border-radius: 50% / 30%;
+    --highlight-bg: rgba(0, 255, 0, 0.3);
+    --highlight-border: #66b266;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 90vw;
+    max-width: 800px;
+    height: 90vh;
+    max-height: 90vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poker-table {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
+    background: var(--felt-green);
+    border-radius: var(--table-border-radius);
+    border: 20px solid var(--wood-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6),
+                inset 0 0 15px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.area-image {
+    margin-bottom: 10px; /* Adds space between the image and the cards */
+}
+
+.profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Adjustments for the game layout */
+.dealer-area, .player-area {
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.dealer-area {
+    margin-bottom: 20px;
+}
+
+.player-area {
+    margin-top: 20px;
+}
+
+
+.area-label {
+    color: #fff;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.cards {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100px;
+}
+
+.card {
+    width: 70px;
+    height: 100px;
+    transition: transform 0.3s ease;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--card-border-radius);
+}
+
+.button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    min-width: 90px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.score, .result {
+    font-size: 1rem;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.result {
+    font-size: 1.2rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-top: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.result.win {
+    background: rgba(0, 128, 0, 0.8);
+}
+
+.result.lose {
+    background: rgba(128, 0, 0, 0.8);
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .card {
+        width: 50px;
+        height: 80px;
+    }
+
+    .button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        min-width: 80px;
+    }
+
+    .area-label {
+        font-size: 1rem;
+    }
+
+    .score, .result {
+        font-size: 0.9rem;
+    }
+
+    .result {
+        font-size: 1.1rem;
+    }
+
+    .poker-table {
+        padding: 10px;
+        border: 15px solid var(--wood-border);
+    }
+}
